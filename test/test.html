@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+</head>
+
+<body>
+	<ul>
+		<li><a href="#">link1</li>
+		<li><a href="#">link2</li>
+		<li><a href="#">link3</li>
+	</ul>
+
+
+</body>
+	<script type="text/javascript">
+
+	(function(){
+		console.log("test-2");
+		var anchor = document.getElementsByTagName('li');
+		for(var i = 0; i < anchor.length; i++){
+			anchor[i].onclick = (function(i){
+				//console.log(index);
+				return function(){console.log(i);};
+			})(i);
+		}
+	})();
+	console.log("end");
+
+	</script>
+</html>
